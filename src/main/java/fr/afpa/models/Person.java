@@ -5,16 +5,14 @@ import javafx.beans.property.StringProperty;
 
 public class Person {
     
-    private StringProperty firstName = new SimpleStringProperty(this, "firstName", "");
-    
-    private StringProperty lastName = new SimpleStringProperty(this, "lastName", "");
-    
-    private StringProperty city = new SimpleStringProperty(this, "city", "");
+    private StringProperty firstName;
+    private StringProperty lastName;
+    private StringProperty city;
 
-    public Person(StringProperty firstName, StringProperty lastName, StringProperty city) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
+    public Person(String firstName, String lastName, String city) {
+        this.firstName = new SimpleStringProperty(firstName);
+        this.lastName = new SimpleStringProperty(lastName);
+        this.city = new SimpleStringProperty(city);
     }
 
     public StringProperty getFirstName() {
